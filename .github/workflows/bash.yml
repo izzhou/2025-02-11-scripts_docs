@@ -1,0 +1,18 @@
+name: Run a bash command
+
+on:
+    workflow_dispatch:
+    push: 
+        branches: [main] #every time you push, also changes the main branch; whenever there's a change in main branch, run the following steps
+        # paths:
+        # - 'Dockerfile'
+        # - .github/workflows/docker-publish.yml # or whatever you named the file
+        # - 'conda-linux-64.lock'
+
+jobs:
+    run_bash_command: #name of the job
+        name: Run a bash command using github actions
+        runs-on: ubuntu-latest #ubuntu machine is most used
+        steps: #run one step at a time
+        - name: Check out the repo
+          uses: actions/checkout@v4
