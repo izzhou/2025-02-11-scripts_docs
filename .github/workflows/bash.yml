@@ -14,5 +14,16 @@ jobs:
         name: Run a bash command using github actions
         runs-on: ubuntu-latest #ubuntu machine is most used
         steps: #run one step at a time
-        - name: Check out the repo
-          uses: actions/checkout@v4
+            - name: Check out the repo # "-" is one step
+            uses: actions/checkout@v4
+
+            - name: Run a command manually
+            run: ls -a
+
+            - name: Run multiple commands manually
+            run: |
+            pwd
+            ls -a
+
+            - name: Run multiple commands manually
+            run: bash scripts/bash.sh
